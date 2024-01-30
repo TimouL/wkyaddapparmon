@@ -29,6 +29,9 @@ jobs:
     outputs:
       env: ${{ steps.get.outputs.env }}
     steps:
+      - id: test
+        name: test
+        run: echo "这个是github.repository的值：${{ github.repository }}，这个是github.ref_name的值：${{ github.ref_name }}"
       - id: get
         name: Get repositories information
         run: |
